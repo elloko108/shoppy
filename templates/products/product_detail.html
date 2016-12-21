@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>{{ product.producto }}</title>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+	<h1>{{ product.producto }}</h1>
+	<h2>{{ product.descripcion }}</h2>
+	<p>{{ product.precio }}</p>
+	<img src="{{ product.imagen.url }}" alt="">
+	
+</body>
+</html>

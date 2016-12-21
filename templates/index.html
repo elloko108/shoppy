@@ -1,0 +1,23 @@
+<html>
+
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>document</title>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+	<a href="{% url 'products:nuevo'%}">Nuevo Producto</a>
+	<ul>
+	{% for pr in object_list %}
+	<li>
+		<a href="{% url 'products:detalle' pr.id %}">
+		{{ pr.producto }}
+		</a>
+		{{ pr.precio }} <br>
+		<img src="{{ pr.imagen.url }}" alt="">
+	</li>
+	{% endfor %}
+	</ul>	
+</body>
+</html>

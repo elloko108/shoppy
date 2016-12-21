@@ -1,0 +1,16 @@
+<html lang="es">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>Producto Nuevo</title>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+	<h1>Producto Nuevo</h1>
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p}}
+		<button type="submit">enviar</button>
+	</form>
+</body>
+</html>

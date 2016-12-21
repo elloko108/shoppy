@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+</head>
+<body>
+	<h1>Login<h1>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<input type="hidden" name="action" value="login">
+
+		<input type="text" name="username">
+		<input type="text" name="password">
+
+		<input type="submit" value="Loguear">
+	</form>
+	<h2>darse de alta</h2>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<input type="hidden" name="action" value="signup">
+
+		<input type="text" name="username">
+		<input type="text" name="password">
+
+		<input type="submit" value="Guardar">
+	</form>
+</body>
+</html>

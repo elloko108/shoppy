@@ -1,0 +1,49 @@
+
+<html>
+
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>Lista de Productos</title>
+	<h1>Lista de Productos</h1>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+	<h1>
+		{% if user.is_authenticated %}
+			<h3>{{ user.username }} | <a href="{% url 'products:logout' %}">Cerrar sesión></a>
+		{% else %}
+			<h3><a href="{% url 'products:Logueo' %}">Iniciar sesion</a>
+		{% endif %}
+	</h1>
+
+	<br>
+	<br>
+	<br>
+	<a href="{% url 'products:nuevo'%}">Nuevo Producto</a>
+	<br>
+	<a href="{% url 'products:tabla' %}">Mostrar en tabla el listado</a>
+	<br>
+	<br>
+	{% for pr in object_list %}
+	<table>
+		<tr> 	
+			<th>Detalle del Producto</th>
+			<th>Precio</th>
+			<th>Foto/Imagen<th>
+		</tr>
+		<tr>
+			<td>
+			<a href="{% url 'products:detalle' pr.id %}"> {{pr.producto }}</a></td>
+			<td>
+			{{ pr.precio }}</td>
+			<td>
+				<img src="{{ pr.imagen.url }}" alt="">
+			</td>
+		</tr>
+	</table>
+	
+	{% endfor %}
+	</ul>	
+</body>
+</html>

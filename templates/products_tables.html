@@ -1,0 +1,17 @@
+{% load render_table from django_tables2 %}
+{% load static %}
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="base.css">
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Productos por tablas</title>
+</head>
+<body>
+	<h1>Listado de Productos con el complemento TABLE2</h1>
+	<div class="table">
+	{% render_table productstables %}
+	</div>
+</body>
+</html>
